@@ -1,0 +1,735 @@
+/* ═══════════════════════════════════════════════════════════════
+   PackSmart — Premium Dark Glassmorphism Design System
+   Font: Inter (Google Fonts)
+   Palette: Violet #7c5cfc · Teal #00d4aa · Warn #ffc107
+            Danger #ff4757 · Success #2ed573
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Animated Gradient Background ── */
+body {
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e, #0f0c29);
+  background-size: 400% 400%;
+  animation: gradientShift 18s ease infinite;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 50%; }
+  50%  { background-position: 100% 0%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Container ── */
+.custom-container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-top: 8px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #7c5cfc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(124, 92, 252, 0.35);
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.header h1 i {
+  -webkit-text-fill-color: #7c5cfc;
+  margin-right: 6px;
+  filter: drop-shadow(0 0 12px rgba(124, 92, 252, 0.5));
+}
+
+.header p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* ── Glass Card ── */
+.custom-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 5px;
+  border-radius: 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #7c5cfc, #00d4aa);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124, 92, 252, 0.35);
+}
+
+.tab-btn i {
+  margin-right: 5px;
+}
+
+/* ── Tab Content ── */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Labels ── */
+.input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.3px;
+}
+
+/* ── Form Inputs ── */
+input[type="number"],
+select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
+}
+
+input[type="number"]::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #7c5cfc;
+  box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.2), 0 0 20px rgba(124, 92, 252, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,0.5)' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+select option {
+  background: #1a1a2e;
+  color: #f0f0f0;
+}
+
+/* ── Submit Button ── */
+.btn-submit {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #7c5cfc, #00d4aa);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.btn-submit:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 30px rgba(124, 92, 252, 0.4), 0 0 60px rgba(0, 212, 170, 0.15);
+}
+
+.btn-submit:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 10px rgba(124, 92, 252, 0.3);
+}
+
+.btn-submit i {
+  margin-right: 6px;
+}
+
+/* ── Camera Display Box ── */
+.cam-box {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #0a0a1a;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  flex-direction: column;
+  margin-bottom: 14px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cam-box canvas,
+.cam-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#overlayCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Scanning Pulse Animation */
+.cam-box.scanning {
+  border-color: #7c5cfc;
+  animation: scanPulse 2s ease-in-out infinite;
+}
+
+@keyframes scanPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(124, 92, 252, 0.4); border-color: #7c5cfc; }
+  50%  { box-shadow: 0 0 20px 4px rgba(124, 92, 252, 0.15); border-color: #00d4aa; }
+  100% { box-shadow: 0 0 0 0 rgba(124, 92, 252, 0.4); border-color: #7c5cfc; }
+}
+
+/* ── Camera Buttons ── */
+.cam-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-cam {
+  padding: 11px 8px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+}
+
+.btn-cam i {
+  margin-right: 4px;
+}
+
+.btn-start {
+  background: linear-gradient(135deg, #2ed573, #1eae5d);
+}
+
+.btn-start:hover {
+  box-shadow: 0 4px 20px rgba(46, 213, 115, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-scan {
+  background: linear-gradient(135deg, #667eea, #7c5cfc);
+}
+
+.btn-scan:hover:not(:disabled) {
+  box-shadow: 0 4px 20px rgba(124, 92, 252, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-stop {
+  background: linear-gradient(135deg, #ff4757, #c0392b);
+}
+
+.btn-stop:hover:not(:disabled) {
+  box-shadow: 0 4px 20px rgba(255, 71, 87, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Disabled state */
+.btn-cam:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Status Box ── */
+.status-box {
+  text-align: center;
+  padding: 11px 16px;
+  margin-top: 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ── Result Boxes ── */
+.result-box {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-success {
+  border-left: 4px solid #2ed573;
+}
+
+.result-warning {
+  border-left: 4px solid #ffc107;
+}
+
+.result-box h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.result-box h3 i {
+  font-size: 1.15rem;
+}
+
+.result-success h3 i {
+  color: #2ed573;
+}
+
+.result-warning h3 i {
+  color: #ffc107;
+}
+
+.result-box p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 6px;
+}
+
+.result-box p strong {
+  color: #f0f0f0;
+}
+
+/* ── Dimension Grid ── */
+.dims-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.dim-card {
+  text-align: center;
+  padding: 14px 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.dim-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dim-val {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff, #7c5cfc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 4px;
+}
+
+.dim-lbl {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* ── Reference Info ── */
+.ref-info {
+  background: rgba(102, 126, 234, 0.12);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ref-info strong {
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.ref-info strong i {
+  color: #667eea;
+}
+
+.ref-info select {
+  margin-top: 4px;
+}
+
+/* ── Use Button ── */
+.use-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 14px;
+  background: linear-gradient(135deg, #2ed573, #00d4aa);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.2px;
+}
+
+.use-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(46, 213, 115, 0.35);
+}
+
+.use-btn:active {
+  transform: scale(0.98);
+}
+
+.use-btn i {
+  margin-right: 6px;
+}
+
+/* ── Scan Steps ── */
+.scan-steps {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scan-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.scan-step.active {
+  border-color: #7c5cfc;
+  background: rgba(124, 92, 252, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.scan-step.active .step-num {
+  background: linear-gradient(135deg, #7c5cfc, #00d4aa);
+  color: #fff;
+}
+
+.step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+/* ── Confidence Bar ── */
+.confidence-container {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.confidence-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #ff4757, #ffc107, #2ed573);
+  background-size: 300% 100%;
+  transition: width 0.5s ease;
+}
+
+/* Dynamic color based on width — JS should add data-confidence attribute */
+.confidence-fill[style*="width: 0"],
+.confidence-fill[style*="width:0"] {
+  background-position: 100% 0;
+}
+
+/* ── Scan Phase Message ── */
+.scan-phase-msg {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(124, 92, 252, 0.08);
+  border-radius: 8px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+}
+
+/* ── Form Group ── */
+.form-group {
+  position: relative;
+}
+
+/* ── General Disabled Button State ── */
+button:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .custom-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .custom-card {
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .dims-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .dim-card {
+    padding: 10px 6px;
+  }
+
+  .dim-val {
+    font-size: 1.1rem;
+  }
+
+  .tab-btn {
+    font-size: 0.82rem;
+    padding: 10px 10px;
+  }
+
+  .btn-cam {
+    font-size: 0.78rem;
+    padding: 10px 4px;
+  }
+
+  .scan-step {
+    font-size: 0.8rem;
+    padding: 9px 10px;
+  }
+}
+
+@media (max-width: 350px) {
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .custom-card {
+    padding: 14px !important;
+  }
+
+  .cam-btns {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .btn-stop {
+    grid-column: span 2;
+  }
+}
+
+/* ── Scan Step Done State ── */
+.scan-step.done {
+  border-color: #2ed573;
+  background: rgba(46, 213, 115, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.scan-step.done .step-num {
+  background: #2ed573;
+  color: #fff;
+}
+
+/* ── Capture Button (active scanning) ── */
+.btn-capture {
+  background: linear-gradient(135deg, #2ed573, #00d4aa) !important;
+  animation: captureGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes captureGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(46, 213, 115, 0.3); }
+  50%      { box-shadow: 0 0 24px rgba(46, 213, 115, 0.6); }
+}
+
+/* ── Status Box States ── */
+.status-ready {
+  background: rgba(46, 213, 115, 0.12) !important;
+  border-color: rgba(46, 213, 115, 0.25) !important;
+  color: #2ed573 !important;
+}
+
+.status-error {
+  background: rgba(255, 71, 87, 0.12) !important;
+  border-color: rgba(255, 71, 87, 0.25) !important;
+  color: #ff4757 !important;
+}
+
+/* ── Utility: Smooth all transitions ── */
+a, button, input, select, .dim-card, .result-box, .scan-step, .status-box {
+  transition: all 0.3s ease;
+}
